@@ -134,11 +134,13 @@ WHERE
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
 SELECT 
-   name
+   city.name,
+   country.name
 FROM 
     city
+LEFT JOIN country ON city.countrycode = country.code
 WHERE 
-    population = 91084;
+    city.population = 91084;
 
 
--- She's in Santa Monica!
+-- She's in Santa Monica, USA!
